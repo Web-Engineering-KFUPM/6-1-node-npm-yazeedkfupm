@@ -1,16 +1,19 @@
 export function add(numbers) {
-  return {/*write code here*/}
+  return numbers.reduce((sum, num) => sum + num, 0);
 }
 
 export function subtract(numbers) {
-  return {/*write code here*/}
+  return numbers.slice(1).reduce((result, num) => result - num, numbers[0]);
 }
 
 export function multiply(numbers) {
-  return {/*write code here*/}
+  return numbers.reduce((product, num) => product * num, 1);
 }
 
 export function divide(numbers) {
-  return {/*write code here*/}
+   if (numbers.slice(1).includes(0)) {
+    return NaN; // or "Error: Division by zero"
+  }
+  return numbers.slice(1).reduce((result, num) => result / num, numbers[0]);
 }
 
